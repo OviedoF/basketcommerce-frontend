@@ -1,0 +1,90 @@
+.ColorContainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: absolute;
+    align-items: center;
+    background-color: #00000090;
+    width: 90%;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    opacity: 0;
+    border-radius: 20px;
+    transition: all 0.2s;
+}
+
+.ColorContainer button{
+    cursor: pointer;
+    width: 62px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    justify-content: space-around;
+
+    &:hover{
+        span, div {
+            transition: all 0.2s;
+            filter: opacity(0.8);
+        }
+    }
+}
+
+.ColorContainer button div {
+    width: 75%;
+    height: 50%;
+    border-radius: 100%;
+}
+
+.ColorContainer button div.red{
+    background-color: rgb(231, 53, 43);
+}
+
+.ColorContainer button div.white{
+    background-color: white;
+}
+
+.ColorContainer button div.yellow{
+    background-color: rgb(254, 213, 51);
+}
+
+.ColorContainer button div.orange{
+    background-color: rgb(243, 107, 38);
+}
+
+.ColorContainer button div.pink{
+    background-color: rgb(240, 114, 143);
+}
+
+.ColorContainer button div.purple{
+    background-color: rgb(141, 66, 159);
+}
+
+.ColorContainer button div.green{
+    background-color: rgb(123, 186, 60);
+}
+
+.ColorContainer button div.grey{
+    background-color: rgb(128, 128, 128);
+}
+
+.ColorContainer button div.multicolor{
+    background-color: radial-gradient(rgb(255, 255, 255) 20%, transparent 20%) 0px 0px / 15px 15px, radial-gradient(rgb(255, 255, 255) 20%, transparent 20%) 8px 8px, rgb(0, 0, 0);
+    background-position: 0px 0px, 8px 8px;
+}
+
+.ColorContainer button div.black{
+    background-color: black;
+}
+
+.ColorContainer button div.blue{
+    background-color: #1790C8;
+}
+
+.ColorContainer button div.brown{
+    background-color: #825D41;
+}

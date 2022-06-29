@@ -1,0 +1,27 @@
+.FormContainer{
+    background-color: #00000090;
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    height: 100%;
+    align-items: center;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.FormContainer div{
+    padding: 20px;
+    background-color: #00000070;
+    border-radius: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    &:hover{
+        border: 1px solid rgba(107, 107, 107, 0.666);
+    }
+}

@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "warriors jersey :D",
+        "imgUrl": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/58fa611a-337e-4716-9106-144ebc168cc5/calzado-de-b%C3%A1squetbol-giannis-immortality-p9QlJF.png",
+        "description": "una remera super nashe",
+        "category": "jerseys",
+        "price": 49.99,
+        "color": "blue",
+        "size": [40, 43, 46, 39]
+    },
+    {
+        "id": 2,
+        "name": "giannis immortality",
+        "imgUrl": "https://static.nike.com/a/images/t_default/e17c545f-13a3-4839-8789-858b8851c665/calzado-de-b%C3%A1squetbol-giannis-immortality-Z6fb1C.png",
+        "description": "zapas super nashe",
+        "category": "sneakers",
+        "price": 79.99,
+        "color": "black",
+        "size": [40, 39]
+    },
+    {
+        "id": 3,
+        "name": "short basket",
+        "imgUrl": "https://www.pngfind.com/pngs/m/601-6010371_mens-basketball-shorts-board-short-hd-png-download.png",
+        "description": "un short super nashe",
+        "category": "shorts",
+        "price": 49.99,
+        "color": "black",
+        "size": [37, 39]
+    },
+    {
+        "id": 4,
+        "name": "heat jersey :D",
+        "imgUrl": "https://www.nba.com/resources/static/team/v2/heat/custom-projects/2015-16_Uniforms/imgs/el-heat-intro-uniform.png",
+        "description": "una remera super nashe 2",
+        "category": "jerseys",
+        "price": 49.99,
+        "color": "red",
+        "size": [41]
+    },
+    {
+        "id": 5,
+        "name": "giannis immortality 2",
+        "imgUrl": "https://static.nike.com/a/images/t_default/79e245ae-ac85-434d-bffb-0be2f73820cf/calzado-de-b%C3%A1squetbol-giannis-immortality-p9QlJF.png",
+        "description": "zapas super nashe 2",
+        "category": "sneakers",
+        "price": 79.99,
+        "color": "pink",
+        "size": [40, 43]
+    },
+    {
+        "id": 6,
+        "name": "short basket 2",
+        "imgUrl": "http://d3ugyf2ht6aenh.cloudfront.net/stores/865/147/products/shortbasketballreversible1-d6c9d0e207880fe2ee15466198586146-640-0.png",
+        "description": "un short super nashe 2",
+        "category": "shorts",
+        "price": 49.99,
+        "color": "black",
+        "size": [41, 42]
+    }
+]

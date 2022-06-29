@@ -1,0 +1,19 @@
+@use '../assets/variables.scss';
+
+.header{
+    background-color: variables.$color1;
+    height: 100vh;
+    width: 9%;
+    padding: 1%;
+    position: relative;
+    box-sizing: border-box;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+
+    .logo_container{
+        height: 35%;
+        position: relative;
+        top: 0px;
+    }
+}

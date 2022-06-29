@@ -1,0 +1,24 @@
+@use '../../assets/variables';
+
+.nav{
+    height: 30%;
+    width: 100%;
+
+    ul {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        
+        li{
+            color: variables.$color2;
+            cursor: pointer;
+            
+            &.active{
+                color: variables.$color4;
+            }
+        }
+    }
+}
