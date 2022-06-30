@@ -1,6 +1,8 @@
 import styles from './contactForm.module.scss';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import DoubleBubble from '../loading/DoubleBubble/DoubleBubble'
+import Spinner from '../loading/spinner/Spinner';
 
 function ContactForm() {
     const [other, setOther] = useState(false);
@@ -50,6 +52,8 @@ function ContactForm() {
             <textarea name="details" id="description" cols="30" rows="10" placeholder="Detalle su pedido" onChange={(e) => handleChange(e)} ></textarea>
             
             <input type="submit" value="Enviar" />
+
+            <Spinner speed={1.3} id={styles.loading_component}/>
         </form>
      );
 }
