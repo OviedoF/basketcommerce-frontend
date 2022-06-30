@@ -5,12 +5,14 @@ import styles from './AddForm.module.scss';
 import AddFormData from './AddFormData';
 import AddFormSpecs from './AddFormSpecs';
 import DoneMessage from '../../DoneMessage';
+import Spinner from '../../loading/spinner/Spinner';
 
 export default function AddForm() {
     const [form, setForm] = useState({});
     const [sizes, setSizes] = useState([]);
     const [error, setError] = useState(false);
     const [done, setDone] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     
     const handleChange = (e) => {
         if(e.target.type == 'file'){
@@ -59,15 +61,21 @@ export default function AddForm() {
         
         data.append('description', form.description);
     
+        setDone(false);
+        setError(false);
+        setIsLoading(true);
+
         await axios.post('http://localhost:4000/api/products', data)
             .then(response =>{ 
                 console.log(response.data);
                 setDone(true);
             })
             .catch(error => {
-                setError(error.request.responseText)
-                console.log(error)
+                setError(true);
+                console.log(error);
             });
+        
+        setIsLoading(false);
     }
     
     return (
@@ -78,7 +86,7 @@ export default function AddForm() {
 
             {error ? <ErrorMessage message={error} setError={setError}/> : ''}
             {done ? <DoneMessage /> : ''}
-            
+            {isLoading ? <Spinner speed={1.3} id={styles.loading_component}/> : ''}
         </form>
     )
 }

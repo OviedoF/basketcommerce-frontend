@@ -2,25 +2,26 @@ import React from 'react';
 
 const ErrorMessage = ({message, setError}) => {
     return (
-        <div onMouseLeave={(e) => setError(false)}>
+        <div>
             <h2>¡Ha ocurrido un error!</h2>
             <p>{message}</p>
 
             <style jsx>{`
                 div{
-                    height: 20vh;
-                    width: 25vw;
+                    height: 13vh;
+                    width: 60vw;
                     background-color: #dc3545;
                     color: #F2F2F2;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
-                    border-radius: 15px;
-                    position: absolute;
-                    bottom: 30vh;
+                    border-bottom-right-radius: 15px;
+                    border-bottom-left-radius: 15px;
+                    position: fixed;
+                    top: 0;
+                    left: 20vw;
                     opacity: 0;
-                    left: 40%;
                     animation: appear 4s ease-in;
                 }
 
@@ -39,6 +40,7 @@ const ErrorMessage = ({message, setError}) => {
 
                     100%{
                         opacity: 0;
+                        display: none;
                     }
                 }
             `}</style>

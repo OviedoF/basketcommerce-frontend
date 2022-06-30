@@ -1,20 +1,17 @@
 @use '../../../assets/variables';
 
 .spinner_container{
-    background-color: transparent;
-    
+    background-color: #00000080;
     z-index: 99;
     position: fixed;
-    width: 100px;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     padding: 10px;
-    top: 50%;
     display: flex;
     justify-content: center;
     align-content: center;
-    flex-direction: column;
-    left: 50%;
-    margin-top: -100px; 
-    margin-left: -50px;
     border-radius: 0.5rem;
 
 }

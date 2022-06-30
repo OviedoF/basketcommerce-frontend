@@ -1,12 +1,16 @@
 import styles from './contactForm.module.scss';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import DoubleBubble from '../loading/DoubleBubble/DoubleBubble'
 import Spinner from '../loading/spinner/Spinner';
+import DoneMessage from '../DoneMessage';
+import ErrorMessage from '../ErrorMessage';
 
 function ContactForm() {
     const [other, setOther] = useState(false);
     const [form, setForm] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(false);
 
     const handleChange = (e) => {
         setForm({
@@ -19,7 +23,7 @@ function ContactForm() {
         e.target.value === 'otro' ? setOther(true) : setOther(false);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const f = new FormData;
@@ -30,9 +34,21 @@ function ContactForm() {
         f.append('customQuery', form.customQuery);
         f.append('details', form.details);
 
-        axios.post('http://localhost:4000/api/comments', f)
-            .then(res => console.log(res))
-            .catch(err => console.error(err));
+        setIsLoading(true);
+        setError(false);
+        setSuccess(false);
+
+        await axios.post('http://localhost:4000/api/comments', f)
+            .then(res => {
+                console.log(res)
+                setSuccess(true);
+            })
+            .catch(err => {
+                console.log(err);
+                setError(true);
+            });
+
+        setIsLoading(false);
     }
 
     return ( 
@@ -53,7 +69,9 @@ function ContactForm() {
             
             <input type="submit" value="Enviar" />
 
-            <Spinner speed={1.3} id={styles.loading_component}/>
+            {success ? <DoneMessage type='Mensaje'/> : ''}
+            {error ? <ErrorMessage /> : ''}
+            {isLoading ? <Spinner speed={1.3} id={styles.loading_component}/> : ''}
         </form>
      );
 }

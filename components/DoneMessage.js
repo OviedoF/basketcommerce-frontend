@@ -1,24 +1,26 @@
 import React from 'react';
 
-const ErrorMessage = ({message, setError}) => {
+const ErrorMessage = ({type, setError}) => {
     return (
-        <div onMouseLeave={(e) => setError(false)}>
-            <h2>¡Producto creado con éxito!</h2>
+        <div>
+            <h2>¡{type} enviado con éxito!</h2>
 
             <style jsx>{`
                 div{
-                    height: 20vh;
-                    width: 25vw;
+                    height: 13vh;
+                    width: 60vw;
                     background-color: #28a745;
                     color: #F2F2F2;
                     display: flex;
+                    flex-direction: column;
                     align-items: center;
                     justify-content: center;
-                    border-radius: 15px;
-                    position: absolute;
-                    bottom: 30vh;
+                    border-bottom-right-radius: 15px;
+                    border-bottom-left-radius: 15px;
+                    position: fixed;
+                    top: 0;
+                    left: 20vw;
                     opacity: 0;
-                    left: 40%;
                     animation: appear 4s ease-in;
                 }
 
@@ -37,6 +39,7 @@ const ErrorMessage = ({message, setError}) => {
 
                     100%{
                         opacity: 0;
+                        display: none;
                     }
                 }
             `}</style>
