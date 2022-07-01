@@ -1,8 +1,8 @@
-import Product from "./ProductContainer";
+import Product from "../../components/products/card/ProductContainer";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from 'react';
 import data from '../../assets/products.json';
-import ProductContainer from "./ProductContainer";
+import ProductContainer from "../../components/products/card/ProductContainer";
 import FormContainer from "../../components/products/FormContainer";
 
 function ProductsPage() {

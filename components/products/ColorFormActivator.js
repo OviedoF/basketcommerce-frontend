@@ -7,7 +7,7 @@ function ColorFormActivator() {
     const [isActive, setIsActive] = useState(false);
 
     return ( 
-        <div>
+        <div style={{zIndex: '99999'}}>
             <div className="act" onMouseEnter={() => setIsActive(true)}>
                 <p>Elegir por color</p>
                 <FontAwesomeIcon icon={faAngleDown} /> 
