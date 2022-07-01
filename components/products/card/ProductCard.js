@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from './ProductCard.module.scss';
 
-export default function ProductCard() {
+export default function ProductCard({product}) {
   return (
     <div className={styles.card}>
         <div className={styles.imgBx}>
-            <img src="https://static.nike.com/a/images/t_default/e17c545f-13a3-4839-8789-858b8851c665/calzado-de-b%C3%A1squetbol-giannis-immortality-Z6fb1C.png" alt="" srcset="" />
-            <h2>Nike Shoes</h2>
+            <img src={product.imagesUrls[7]} alt="" srcSet="" />
+            <h2>{product.name}</h2>
         </div>
 
         
@@ -15,7 +15,10 @@ export default function ProductCard() {
                 <div className={styles.contentBx}>
                     <div className={styles.size}>
                         <h3>Size : </h3>
-                        <span>7</span>
+                        {product.sizes.map(el => {
+                            return <span>{el}</span>
+                        })}
+                        {/* <span>7</span>
                         <span>8</span>
                         <span>9</span>
                         <span>10</span>
@@ -25,7 +28,7 @@ export default function ProductCard() {
                         <span>10</span>
                         <span>10</span>
                         <span>10</span>
-                        <span>10</span>
+                        <span>10</span> */}
                     </div>
 
                     <button className={styles.link}>

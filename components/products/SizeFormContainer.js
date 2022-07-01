@@ -22,8 +22,8 @@ function SizeFormContainer({isActive, setIsActive}) {
     return ( 
         <div className={styles.FormContainer} style={isActive ? {top: '100%', opacity: '1', zIndex: 0} : {top: '0', opacity: '0', zIndex: '-1'}} onMouseLeave={() => setIsActive(false)}>
             {sizes.map(el => {
-                return <div>
-                    <p key={el}>{el}</p>
+                return <div key={el}>
+                    <p >{el}</p>
                 </div>
             })}
         </div>

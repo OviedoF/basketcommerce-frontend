@@ -9,7 +9,7 @@ function HomeSection() {
         <section className={styles.grid_container}>
             <HomeDiv imageBanner={shirts} title={'Jordan'} redirectTo={'products/jerseys'}/>
 
-            <HomeDiv imageBanner={sneakers} title={'Giannis'} redirectTo={'products/sneakers'}/>
+            <HomeDiv imageBanner={sneakers} title={'Giannis'} redirectTo={'products/giannis'}/>
 
             <HomeDiv imageBanner={collection} title={'Todos los productos'} two_row={true} redirectTo={'products/shorts'}/>
         </section>

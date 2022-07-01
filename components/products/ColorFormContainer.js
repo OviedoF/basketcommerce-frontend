@@ -21,7 +21,7 @@ function ColorFormContainer({isActive, setIsActive}) {
     return ( 
         <div className={styles.ColorContainer} style={isActive ? {top: '100%', opacity: '1', zIndex: 0} : {top: '0', opacity: '0', zIndex: '-1'}} onMouseLeave={() => setIsActive(false)}>
             {colors.map(el => {
-                return <button active={false}>
+                return <button active={'false'} key={el}>
                     <div className={styles[el]}/>
                     <span>{el}</span>
                 </button>

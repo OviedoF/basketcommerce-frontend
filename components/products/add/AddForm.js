@@ -85,7 +85,7 @@ export default function AddForm() {
             <AddFormSpecs handleChange={handleChange} handleSizes={handleSizes}/>
 
             {error ? <ErrorMessage message={error} setError={setError}/> : ''}
-            {done ? <DoneMessage /> : ''}
+            {done ? <DoneMessage type={'Producto'}/> : ''}
             {isLoading ? <Spinner speed={1.3} id={styles.loading_component}/> : ''}
         </form>
     )

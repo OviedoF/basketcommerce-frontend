@@ -1,26 +1,25 @@
-import Product from "../../components/products/card/ProductContainer";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from 'react';
-import data from '../../assets/products.json';
 import ProductContainer from "../../components/products/card/ProductContainer";
 import FormContainer from "../../components/products/FormContainer";
+import axios from "axios";
 
-function ProductsPage() {
+function ProductsPage({resProducts}) {
     const router = useRouter();
 
     const [products, setProducts] = useState([]);
 
+    const productsFinded = router.query.product.charAt(0).toUpperCase() + router.query.product.slice(1);
+
     useEffect(() => {
-        const filterProducts = data.filter((el) => {
-            if(el.category === router.query.product){
+        const filterProducts = resProducts.filter((el) => {
+            if(el.category === productsFinded){
                 return el
             } 
         })
 
         setProducts(filterProducts);
     }, []);
-
-    console.log(products);
 
     return ( 
         <main>
@@ -59,6 +58,18 @@ function ProductsPage() {
             <ProductContainer products={products}/>
         </main>
      );
+}
+
+export async function getServerSideProps(){
+    const resProducts = await axios('http://localhost:4000/api/products')
+        .then(response => response.data)
+        .catch(err => console.log(err));
+   
+    return {
+        props: {
+            resProducts
+        }
+    };
 }
 
 export default ProductsPage;

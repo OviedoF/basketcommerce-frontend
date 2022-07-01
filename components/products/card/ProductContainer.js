@@ -6,11 +6,12 @@ function ProductContainer({products}) {
 
     return ( 
         <div className="cardContainer">
-            <ProductCard/>
+            {products.map(el => {
+                return <ProductCard product={el}/>
+            })}
 
             <style jsx>{`
                 .cardContainer{
-                    margin-top: 60px;
                     display: flex;
                     flex-wrap: wrap;
                     width: 100%;
