@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ErrorMessage = ({message, setError}) => {
+const ErrorMessage = ({message}) => {
     return (
         <div>
             <h2>¡Ha ocurrido un error!</h2>

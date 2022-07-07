@@ -33,6 +33,7 @@
 
         h2{
             text-align: center;
+            width: 80%;
             font-size: 26px;
             letter-spacing: 2px;
         }
@@ -60,20 +61,20 @@
                 .size{
                     display: flex;
                     width: 100%;
-                    justify-content: space-around;
                     flex-wrap: wrap;
                     align-items: center;
+                    justify-content: center;
         
                     span{
                         background-color: variables.$transparency;
                         box-shadow: variables.$border;
-                        width: 11%;
-                        height: 12%;
+                        width: 40px;
+                        height: 40px;;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         border-radius: 0px;
-                        margin: 3px 3px;
+                        margin: 5px 5px;
                     }
                 }
         
@@ -99,7 +100,7 @@
     &:hover{
     
         .imgBx{
-            top: -40%;
+            top: -30%;
 
             img{
                 transform: rotate(-10deg);
@@ -107,7 +108,7 @@
         }
 
         .content_container{
-            bottom: 40%;
+            bottom: 20%;
             overflow: visible;
 
             .content_hidder{

@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from 'react';
-import ProductContainer from "../../components/products/card/ProductContainer";
-import FormContainer from "../../components/products/FormContainer";
+import ProductContainer from "../../../components/products/card/ProductContainer";
+import FormContainer from "../../../components/products/FormContainer";
 import axios from "axios";
 
 function ProductsPage({resProducts}) {
@@ -9,7 +9,7 @@ function ProductsPage({resProducts}) {
 
     const [products, setProducts] = useState([]);
 
-    const productsFinded = router.query.product.charAt(0).toUpperCase() + router.query.product.slice(1);
+    const productsFinded = router.query.category.charAt(0).toUpperCase() + router.query.category.slice(1);
 
     useEffect(() => {
         const filterProducts = resProducts.filter((el) => {

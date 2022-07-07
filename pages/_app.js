@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/dist/shared/lib/head'; 
 import '../assets/css/reset.css';
-import Header from '../components/Header';
+import Header from '../components/header/Header';
 import favicon from '../assets/imgs/favicon.ico';
+import { Provider } from 'react-redux';
+import store from '../src/store/index';
 
 function App({Component, pageProps}) {
     return ( 
@@ -11,11 +13,11 @@ function App({Component, pageProps}) {
                 <title>eCommerce</title>
             </Head>
 
-            <Header />
-            
-            <Component {...pageProps}>
+            <Provider store={store}>
+                <Header />
                 
-            </Component>
+                <Component {...pageProps} />
+            </Provider>
         </>
      );
 }

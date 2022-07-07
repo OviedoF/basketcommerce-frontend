@@ -1,13 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import ProductCard from "./ProductCard";
+import { useDispatch } from 'react-redux';
+import { change_icon_nav } from '../../../src/actions/handleNavActions';
 
 function ProductContainer({products}) {
     console.log(products);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch( change_icon_nav('products') );
+    }, []);
 
     return ( 
         <div className="cardContainer">
             {products.map(el => {
-                return <ProductCard product={el}/>
+                return <ProductCard product={el} key={el._id}/>
             })}
 
             <style jsx>{`
