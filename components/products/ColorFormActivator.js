@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown} from "@fortawesome/free-solid-svg-icons";
 
-function ColorFormActivator() {
+function ColorFormActivator({color, setColor, products}) {
     const [isActive, setIsActive] = useState(false);
 
     return ( 
@@ -13,7 +13,7 @@ function ColorFormActivator() {
                 <FontAwesomeIcon icon={faAngleDown} /> 
             </div>
             {/* <p onMouseOver={(e) => setIsActive(!isActive)}>Elegir talles <FontAwesomeIcon icon={faAngleDown} /> </p> */}
-            <ColorFormContainer isActive={isActive} setIsActive={setIsActive}/>
+            <ColorFormContainer isActive={isActive} setIsActive={setIsActive} color={color} setColor={setColor} products={products}/>
 
             <style jsx>
                 {`

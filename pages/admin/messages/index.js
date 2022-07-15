@@ -2,8 +2,10 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { useEffect } from "react";
 import { change_icon_nav } from '../../../src/actions/handleNavActions';
+import MessagesContainer from '../../../components/admin/messages/MessagesContainer';
+import axios from 'axios';
 
-export default function Messages() {
+export default function Messages({comments}) {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -11,6 +13,27 @@ export default function Messages() {
   }, []);
 
   return (
-    <div>Messages</div>
+    <main>
+      <MessagesContainer comments={comments}/>
+
+      <style jsx>{`
+        main{
+          box-sizing: border-box;
+        }
+      `}</style>
+    </main>
   )
 }
+
+export async function getServerSideProps(){
+  const comments = await axios('http://localhost:4000/api/comments')
+      .then(response => response.data)
+      .catch(err => console.log(err));
+ 
+  return {
+      props: {
+          comments
+      }
+  };
+}
+

@@ -1,12 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouseChimney, faBasketball, faEnvelope, faCartShopping, faPlus, faMessage, faUserGear } from "@fortawesome/free-solid-svg-icons";
+import { faHouseChimney, faBasketball, faEnvelope, faCartShopping, faPlus, faMessage, faUserGear, faUserLock } from "@fortawesome/free-solid-svg-icons";
 import styles from './Navbar.module.scss';
 import Link from 'next/link';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import AdminLinks from "./AdminLinks";
 
 function Navbar() {
     const nav_status = useSelector(state => state.handleNavActive);
-    console.log(nav_status);
+    const auth = useSelector(state => state.auth);
     
     return ( 
             <nav className={styles.nav}>
@@ -34,24 +35,15 @@ function Navbar() {
                             <FontAwesomeIcon icon={faCartShopping}/>
                         </Link>
                     </li>
-                    
-                    <li id="nav_add_product" className={nav_status.active === 'add_product' ? styles.active : ''}>
-                        <Link href={'/admin/add-product'}> 
-                            <FontAwesomeIcon icon={faPlus}/>
-                        </Link>
-                    </li>
-
-                    <li id="nav_messages" className={nav_status.active === 'messages' ? styles.active : ''}>
-                        <Link href={'/admin/messages'}>
-                            <FontAwesomeIcon icon={faMessage}/>
-                        </Link>
-                    </li>
 
                     <li id="nav_admin" className={nav_status.active === 'admin_login' ? styles.active : ''}>
                         <Link href={'/admin'}>
                             <FontAwesomeIcon icon={faUserGear}/>
                         </Link>
                     </li>
+
+                    {auth ? <AdminLinks nav_status={nav_status}/> : ''}
+
                 </ul>
             </nav>
      );

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown} from "@fortawesome/free-solid-svg-icons";
 
-function SizeFormActivator() {
+function SizeFormActivator({sizesActive, setSizesActive, products}) {
     const [isActive, setIsActive] = useState(false);
 
     return ( 
@@ -13,7 +13,13 @@ function SizeFormActivator() {
                 <FontAwesomeIcon icon={faAngleDown} /> 
             </div>
             {/* <p onMouseOver={(e) => setIsActive(!isActive)}>Elegir talles <FontAwesomeIcon icon={faAngleDown} /> </p> */}
-            <SizeFormContainer isActive={isActive} setIsActive={setIsActive}/>
+            <SizeFormContainer
+                products={products} 
+                isActive={isActive} 
+                setIsActive={setIsActive} 
+                sizesActive={sizesActive} 
+                setSizesActive={setSizesActive}
+            />
 
             <style jsx>
                 {`

@@ -19,9 +19,7 @@
     }
 
     input{
-        color: variables.$color4;
-        border: none;
-        border-bottom: 1px solid variables.$color3;
+        @include variables.estilizar-inputs();
 
         &[type = "submit"]{
             cursor: pointer;

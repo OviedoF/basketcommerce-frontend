@@ -4,3 +4,17 @@ $color3: #F96D00;
 $color4: #F2F2F2;
 $transparency: #00000030;
 $border: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+
+@mixin estilizar-inputs(){
+    background-color: #00000008;
+    color: $color4;
+    border: none;
+    border-bottom: 1px solid $color3;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        transition: all 100000000s ease-in-out 0s;
+    }
+}

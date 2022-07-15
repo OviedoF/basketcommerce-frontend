@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { useEffect } from "react";
 import { change_icon_nav } from "../../src/actions/handleNavActions";
+import Cart from '../../components/shopping/cart';
 
 export default function ShoppingCart() {
   const dispatch = useDispatch();
@@ -11,6 +12,16 @@ export default function ShoppingCart() {
   }, []);
 
   return (
-    <div>ShoppingCart</div>
+    <main>
+      <Cart />
+
+      <style jsx>{`
+        main{
+          display: flex;
+          align-items: center;
+          justify-content: center; 
+        }    
+      `}</style>
+    </main>
   )
 }

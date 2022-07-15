@@ -1,0 +1,19 @@
+@use '../../../assets/variables';
+
+.form {
+    background-color: variables.$transparency;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30%;
+    box-shadow: variables.$border;
+    height: 60%;
+
+    input{
+        @include variables.estilizar-inputs();
+        margin-top: 30px;
+        height: 20px;
+        padding: 10px;
+    }
+}

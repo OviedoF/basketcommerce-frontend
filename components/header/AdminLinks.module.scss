@@ -1,0 +1,17 @@
+@use '../../assets/variables';
+
+.div{
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+li.active{
+    color: variables.$color2;
+    cursor: pointer;
+    
+    &.active{
+        color: variables.$color4;
+    }
+}

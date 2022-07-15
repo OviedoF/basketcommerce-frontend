@@ -1,13 +1,19 @@
 import ColorFormActivator from "./ColorFormActivator";
-import ColorFormContainer from "./ColorFormContainer";
 import SizeFormActivator from "./SizeFormActivator";
-import SizeFormContainer from "./SizeFormContainer";
 
-function FormContainer() {
+function FormContainer({color, setColor, products, sizesActive, setSizesActive}) {
     return ( 
-        <form>
-            <ColorFormActivator />
-            <SizeFormActivator />
+        <form onSubmit={(e) => e.preventDefault()}>
+            <ColorFormActivator 
+                color={color} 
+                setColor={setColor} 
+                products={products} 
+            />
+            <SizeFormActivator 
+                products={products}
+                sizesActive={sizesActive} 
+                setSizesActive={setSizesActive}
+            />
 
             <style jsx>
                 {`

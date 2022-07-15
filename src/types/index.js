@@ -6,3 +6,8 @@ export const DELETE_PRODUCT = 'DELETE_PRODUCT';
 // NAVEGACION
 
 export const CHANGE_NAV_STATE = 'CHANGE_NAV_STATE';
+
+// AUTH
+
+export const ADMIN_LOGIN = 'ADMIN_LOGIN';
+export const ADMIN_LOGOUT = 'ADMIN_LOGOUT';

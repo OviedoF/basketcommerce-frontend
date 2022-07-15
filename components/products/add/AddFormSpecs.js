@@ -1,11 +1,12 @@
 import React from 'react';
 
-const AddFormSpecs = ({handleChange, handleSizes}) => {
+const AddFormSpecs = ({handleChange, handleSizes, edit, description}) => {
     const sizes = [36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47];
 
     return (
             <div className='specs'>
-                <select name="color" id="" onChange={(e) => handleChange(e)}>
+                {!edit 
+                ? <select name="color" id="" onChange={(e) => handleChange(e)}>
                     <option value="">Selecciona el color</option>
 
                     <option value="black">Black</option>
@@ -20,7 +21,7 @@ const AddFormSpecs = ({handleChange, handleSizes}) => {
                     <option value="red">Red</option>
                     <option value="white">White</option>
                     <option value="yellow">Yellow</option>
-                </select>
+                </select> : ''}
 
                 <div className='sizes'>
                     <p>Talles disponibles</p>
@@ -32,7 +33,13 @@ const AddFormSpecs = ({handleChange, handleSizes}) => {
                     })}
                 </div>
 
-                <textarea name="description" cols="30" rows="10" placeholder='description' onChange={(e) => handleChange(e)}/>
+                <textarea 
+                    name="description" 
+                    cols="30" 
+                    rows="10" 
+                    placeholder={description ? description : 'description'}
+                    onChange={(e) => handleChange(e)}
+                />
 
                 <style jsx>{`
                     .specs{

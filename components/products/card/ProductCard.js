@@ -3,10 +3,12 @@ import styles from './ProductCard.module.scss';
 import Image from 'next/image';
 import Link from 'next/dist/client/link';
 import { useRouter } from 'next/router';
+import { useSelector, useDispatch } from 'react-redux';
+import AdminIcons from './AdminIcons';
 
-export default function ProductCard({product}) {
+export default function ProductCard({product, setIsLoading, setError, setSuccess}) {
     const router = useRouter();
-
+    const auth = useSelector(state => state.auth);
     return (
         <div className={styles.card}>
             <div className={styles.imgBx}>
@@ -30,6 +32,8 @@ export default function ProductCard({product}) {
                     </div>
                 </div>
             </div>
+
+            {auth ? <AdminIcons product={product} setIsLoading={setIsLoading} setError={setError} setSuccess={setSuccess}/> : ''}
         </div>
         
     )

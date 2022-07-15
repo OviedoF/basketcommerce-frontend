@@ -1,0 +1,34 @@
+@use '../../../assets/variables';
+
+.card{
+    background-color: #FEFEFE20;
+    padding: 25px;
+    width: 45%;
+    margin-top: 15px;
+    border-radius:10px;
+    border-left: 4px solid #FEFEFE60;
+    position: relative;
+
+    .details{
+        h2{
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        p{
+            text-transform: capitalize;
+            .email{
+                text-transform: none;
+            }
+        }
+
+        margin-bottom: 10px;
+    }
+
+    .date{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        font-size: 12px;
+    }
+}

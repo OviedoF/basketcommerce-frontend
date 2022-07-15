@@ -5,21 +5,8 @@ import FormContainer from "../../../components/products/FormContainer";
 import axios from "axios";
 
 function ProductsPage({resProducts}) {
-    const router = useRouter();
-
-    const [products, setProducts] = useState([]);
-
-    const productsFinded = router.query.category.charAt(0).toUpperCase() + router.query.category.slice(1);
-
-    useEffect(() => {
-        const filterProducts = resProducts.filter((el) => {
-            if(el.category === productsFinded){
-                return el
-            } 
-        })
-
-        setProducts(filterProducts);
-    }, []);
+    const [color, setColor] = useState(false);
+    const [sizesActive, setSizesActive] = useState([]);
 
     return ( 
         <main>
@@ -54,14 +41,26 @@ function ProductsPage({resProducts}) {
                 `}
             </style>
 
-            <FormContainer />
-            <ProductContainer products={products}/>
+            <FormContainer 
+                color={color} 
+                setColor={setColor} 
+                products={resProducts}
+                sizesActive={sizesActive}
+                setSizesActive={setSizesActive}
+            />
+
+            <ProductContainer 
+                products={resProducts} 
+                color={color}
+                sizesActive={sizesActive}
+            />
         </main>
-     );
+    );
 }
 
-export async function getServerSideProps(){
-    const resProducts = await axios('http://localhost:4000/api/products')
+export async function getServerSideProps(context){
+
+    const resProducts = await axios(`http://localhost:4000/api/products/category/${context.params.category}`)
         .then(response => response.data)
         .catch(err => console.log(err));
    

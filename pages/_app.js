@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React  from 'react';
 import Head from 'next/dist/shared/lib/head'; 
 import '../assets/css/reset.css';
 import Header from '../components/header/Header';
-import favicon from '../assets/imgs/favicon.ico';
 import { Provider } from 'react-redux';
 import store from '../src/store/index';
 

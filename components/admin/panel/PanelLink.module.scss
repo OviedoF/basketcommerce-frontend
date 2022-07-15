@@ -1,0 +1,48 @@
+@use '../../../assets/variables';
+
+.container{
+    box-shadow: variables.$border;
+    width: 45%;
+    height: 40%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+
+    &:hover{
+        .image{
+            transform: scale(1.3);
+        }
+
+        .background{
+            background-color: variables.$transparency;
+        }
+    }
+}
+
+.image{
+    transition: all .7s;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.background{
+    transition: all .5s;
+    background: #00000098;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background h2{
+    position: absolute;
+    font-size: 30px;
+}

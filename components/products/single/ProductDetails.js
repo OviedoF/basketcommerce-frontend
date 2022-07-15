@@ -1,8 +1,8 @@
-import { v4 as uuidv4 } from 'uuid';
+
 import ButtonDesign from '../../ButtonDesign';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { agregarProducto } from '../../../src/actions/shoppingCartActions';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ProductSizes from './ProductSizes';
 import DoneMessage from '../../DoneMessage';
 import ErrorMessage from '../../ErrorMessage';
@@ -12,7 +12,6 @@ export default function ProductDetails({product}) {
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
 
-    const shoppingCart = useSelector(state => state.shoppingCart);
     const dispatch = useDispatch();
 
     const sendToCart = async () => {
@@ -25,7 +24,8 @@ export default function ProductDetails({product}) {
                 price: product.price,
                 size: sizeSelected,
                 category: product.category,
-                imgs: product.imagesUrls
+                imgs: product.imagesUrls,
+                color: product.color
             }
 
             dispatch( agregarProducto(productToSend) );
@@ -47,7 +47,7 @@ export default function ProductDetails({product}) {
 
         <ProductSizes productSizes={product.sizes} setSizeSelected={setSizeSelected} sizeSelected={sizeSelected}/>
 
-        <ButtonDesign text={'Añadir al carrito'} sendToCart={sendToCart}/>
+        <ButtonDesign text={'Añadir al carrito'} action={sendToCart}/>
 
         {success ? <DoneMessage type={'Producto'}/> : ''}
         {error ? <ErrorMessage message={'Por favor, elija un talle.'}/> : ''}
