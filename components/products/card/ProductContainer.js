@@ -18,15 +18,6 @@ function ProductContainer({products, color, sizesActive}) {
         dispatch( change_icon_nav('products') );
     }, []);
 
-    // useEffect(() => {
-    //     if(color){
-    //         const productsFindedByColor = products.filter(el => el.color === color);
-    //         setProductsRender(productsFindedByColor);
-    //     } else {
-    //         setProductsRender(products)
-    //     }
-    // }, [color]);
-
     useEffect(() => {
         let productsFinded = [];
 
@@ -69,8 +60,9 @@ function ProductContainer({products, color, sizesActive}) {
                 .cardContainer{
                     display: flex;
                     flex-wrap: wrap;
-                    width: 100%;
-                    height: 100%;
+                    width: 96%;
+                    justify-content: center;
+                    padding-bottom: 35px;
                 }
             `}</style>
 

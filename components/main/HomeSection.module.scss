@@ -8,4 +8,26 @@
     grid-template-rows: 1fr 1fr;
     grid-gap: 10px 10px;
     position: relative;
+    overflow-y: scroll;
+}
+
+.grid_container::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.grid_container::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.grid_container::-webkit-scrollbar-button:increment,.grid_container::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.grid_container::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.grid_container::-webkit-scrollbar-thumb {
+    background-color: #79797970;
+    border-radius: 50px;
 }

@@ -7,12 +7,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import AdminIcons from './AdminIcons';
 
 export default function ProductCard({product, setIsLoading, setError, setSuccess}) {
+    console.log(product.imagesUrls.length)
     const router = useRouter();
     const auth = useSelector(state => state.auth);
     return (
         <div className={styles.card}>
             <div className={styles.imgBx}>
-                <Image src={product.imagesUrls[7]} alt={product.name + 'image'} width={500} height={400}/>
+                <Image src={product.imagesUrls[product.imagesUrls.length - 1]} alt={product.name + 'image'} width={500} height={400}/>
                 <h2>{product.name}</h2>
             </div>
 

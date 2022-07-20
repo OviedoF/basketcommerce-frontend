@@ -5,6 +5,9 @@ import FormContainer from "../../components/products/FormContainer";
 import axios from "axios";
 
 function ProductsPage({resProducts}) {
+    const [color, setColor] = useState(false);
+    const [sizesActive, setSizesActive] = useState([]);
+
     return ( 
         <main>
             <style jsx>
@@ -38,14 +41,25 @@ function ProductsPage({resProducts}) {
                 `}
             </style>
 
-            <FormContainer />
-            <ProductContainer products={resProducts}/>
+            <FormContainer 
+                color={color} 
+                setColor={setColor} 
+                products={resProducts}
+                sizesActive={sizesActive}
+                setSizesActive={setSizesActive}
+            />
+
+            <ProductContainer 
+                products={resProducts} 
+                color={color}
+                sizesActive={sizesActive}
+            />
         </main>
      );
 }
 
 export async function getServerSideProps(){
-    const resProducts = await axios('http://localhost:4000/api/products')
+    const resProducts = await axios(`http://localhost:4000/api/products`)
         .then(response => response.data)
         .catch(err => console.log(err));
    

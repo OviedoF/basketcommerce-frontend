@@ -16,10 +16,19 @@ export default function ProductEdit({product, nameApi}) {
     const [isLoading, setIsLoading] = useState(false);
     
     const handleChange = (e) => {
-        setForm({
-            ...form, 
-            [e.target.name]: e.target.value
-        })
+        if(e.target.name == 'category'){
+            const categoryCapitalize = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
+
+            setForm({
+                ...form, 
+                [e.target.name]: categoryCapitalize
+            })
+        } else {
+            setForm({
+                ...form, 
+                [e.target.name]: e.target.value
+            })
+        }
     }
 
     const handleSizes = (e) => {
@@ -40,6 +49,7 @@ export default function ProductEdit({product, nameApi}) {
         data.append('name', form.name || product.name);
         data.append('price', form.price || product.price);
         data.append('category', form.category || product.category);
+        data.append('priceWithOffer', form.priceWithOffer);
 
         sizes.forEach(el => {
             data.append('sizes', el)

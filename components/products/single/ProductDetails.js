@@ -41,7 +41,15 @@ export default function ProductDetails({product}) {
     <div className='details'>
         <h2>{product.name}</h2>
         <p className='category'>{product.category}</p>
-        <p className='price'>${product.price}</p>
+        
+        {product.priceWithOffer 
+        ? <div className='price'>
+            <p className='offer'>${product.priceWithOffer}</p>
+            <p className='noOffer'>${product.price}</p>
+            <p className='alert-price'>¡Precio especial!</p>
+        </div> 
+        : <p className='price'>${product.price}</p>
+        }
 
         <p className='description'>{product.description}</p>
 
@@ -62,6 +70,26 @@ export default function ProductDetails({product}) {
                 width: 100%;
                 text-align: left;
                 font-size: 250%;
+            }
+
+            .price {
+                display: flex;
+                align-items: flex-end;
+            }
+            .price .offer{
+                font-size: 20px;
+            }
+
+            .price .noOffer{
+                text-decoration:line-through;
+                margin: 0px 10px;
+                color: red;
+                font-size: 12px;
+            }
+
+            .price .alert-price {
+                color: #00C851;
+                text-transform: uppercase;
             }
 
             p.category{

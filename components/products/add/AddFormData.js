@@ -4,7 +4,13 @@ function AddFormData({handleChange}) {
             <input type="file" name="images" id="" onChange={(e) => handleChange(e)} multiple/>
             <input type="text" name="name" id="" onChange={(e) => handleChange(e)} placeholder='Name'/>
             <input type="number" name="price" id="" onChange={(e) => handleChange(e)} placeholder='Price'/>
-            <input type="text" name="category" id="" onChange={(e) => handleChange(e)} placeholder='Deportist (for example "Jordan", "Giannis")'/>
+            <input type="number" name="priceWithOffer" id="" onChange={(e) => handleChange(e)} placeholder='Price with offer (optional)'/>
+            <input 
+            type="text" 
+            name="category" id="" 
+            onChange={(e) => handleChange(e)} 
+            placeholder='Deportist (for example "Jordan", "Giannis")'
+            />
             <button type="submit">Enviar</button>
 
             <style jsx>{`              

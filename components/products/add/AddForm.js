@@ -20,14 +20,26 @@ export default function AddForm() {
                 ...form,
                 [e.target.name]: e.target.files
             })
+        } else if(e.target.name == 'category'){
+            const categoryCapitalize = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
+
+            if(e.target.value !== ''){
+                setForm({
+                    ...form, 
+                    [e.target.name]: categoryCapitalize
+                })
+            } else {
+                setForm({
+                    ...form,
+                    [e.target.name]: false
+                })
+            }
         } else {
             setForm({
                 ...form, 
                 [e.target.name]: e.target.value
             })
         }
-
-        console.log(form);
     }
 
     const handleSizes = (e) => {
@@ -47,6 +59,7 @@ export default function AddForm() {
     
         data.append('name', form.name);
         data.append('price', form.price);
+        if (form.priceWithOffer) data.append('priceWithOffer', form.priceWithOffer);
         data.append('category', form.category);
         // data.append('image', form.image);
         data.append('color', form.color);

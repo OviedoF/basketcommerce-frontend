@@ -26,6 +26,7 @@ export default function SingleProductPage({product}) {
 }
 
 export async function getServerSideProps(context){
+
     const dataProduct = await axios(`http://localhost:4000/api/products/${context.params.product}`)
         .then(response => response.data)
         .catch(err => console.log(err));

@@ -18,6 +18,13 @@ export default function ProductEditData({handleChange, product}) {
         />
 
         <input 
+          type="number" 
+          name="priceWithOffer" 
+          onChange={(e) => handleChange(e)} 
+          placeholder='AGREGUE UNA OFERTA A ESTE PRODUCTO!!'
+        />
+
+        <input 
           type="text" 
           name="category" 
           onChange={(e) => handleChange(e)} 
