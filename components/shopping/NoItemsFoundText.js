@@ -28,6 +28,21 @@ export default function NoItemsFoundText() {
                 font-size: 16px;
                 margin-top: 5px;
             }
+
+            @media only screen and (max-width: 600px) {
+                div.container{
+                    height: none;
+                    margin-top: 30px;
+                    padding: 0;
+                }
+
+                h1{
+                    font-size: 25px;
+                }
+                p{
+                    margin-top: 15px;
+                }
+            }
         `}</style>
     </div>
   )

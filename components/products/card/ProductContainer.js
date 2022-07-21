@@ -6,7 +6,7 @@ import Spinner from '../../loading/spinner/Spinner';
 import ErrorMessage from '../../ErrorMessage';
 import DoneMessage from '../../DoneMessage';
 
-function ProductContainer({products, color, sizesActive}) {
+function ProductContainer({products, color, sizesActive, isGeneral}) {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
@@ -53,7 +53,14 @@ function ProductContainer({products, color, sizesActive}) {
     return ( 
         <div className="cardContainer">
             {productsRender.map(el => {
-                return <ProductCard product={el} key={el._id} setIsLoading={setIsLoading} setError={setError} setSuccess={setSuccess}/>
+                return <ProductCard 
+                    product={el} 
+                    key={el._id} 
+                    setIsLoading={setIsLoading} 
+                    setError={setError} 
+                    setSuccess={setSuccess}
+                    isGeneral={isGeneral}
+                />
             })}
 
             <style jsx>{`

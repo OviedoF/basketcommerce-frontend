@@ -63,3 +63,14 @@ main{
 #__next{
 	display: flex;
 }
+
+@media only screen and (max-width: 600px) {
+	#__next{
+		flex-direction: column;
+	}
+	
+	main{
+		height: 85vh;
+		width: 100%;
+	}
+}

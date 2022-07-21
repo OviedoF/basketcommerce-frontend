@@ -27,11 +27,14 @@ export default function AdminPage() {
       {success ? <SuccessMessage type={'Usuario'}/> : ''}
 
       <style jsx>{
-        `main{
+        `
+        main{
           display:flex;
           align-items: center;
           justify-content: center;
-        }`
+        }
+      
+        `
         }</style>
     </main>
   )

@@ -1,12 +1,12 @@
 .ColorContainer{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     position: absolute;
     align-items: center;
     background-color: #00000090;
     width: 90%;
-    height: 100%;
+    padding: 15px;
     top: 0;
     opacity: 0;
     border-radius: 20px;
@@ -15,8 +15,8 @@
 
 .ColorContainer button{
     cursor: pointer;
-    width: 62px;
-    height: 68px;
+    width: 15%;
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;

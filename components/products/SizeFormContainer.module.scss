@@ -1,12 +1,12 @@
 .FormContainer{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-wrap: wrap;
     position: absolute;
     align-items: center;
     background-color: #00000090;
     width: 90%;
-    height: 100%;
+    padding: 15px;
     top: 0;
     opacity: 0;
     border-radius: 20px;
@@ -16,6 +16,7 @@
 .FormContainer div{
     width: 10%;
     height: 50px;
+    margin: 3px 0px 3px 30px;
     background-color: #00000070;
     border-radius: 10px;
     cursor: pointer;

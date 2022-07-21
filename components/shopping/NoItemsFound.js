@@ -24,6 +24,22 @@ export default function NoItemsFound() {
                     width: 24%;
                     font-size: 700%;
             }
+
+            @media only screen and (max-width: 600px) {
+                .container{
+                    height: 50%;
+                    padding: 0;
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                }
+
+                .icon{
+                  width: 100%;
+                  display: flex;
+                  justify-content: center;
+                }
+            }   
         `}</style>
     </div>
   )

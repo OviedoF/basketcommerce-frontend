@@ -13,6 +13,34 @@
     transition: all .5s;
     position: relative;
 
+    .priceWithoutOffer{
+        font-size: 18px;
+        transform: rotate(-25deg);
+        position: absolute;
+        top: 0;
+        left: -10px;
+    }
+
+    .priceContainer{
+        position: absolute;
+        top: 0;
+        left: -10px;
+        display: flex;
+        align-items: flex-end;
+        transform: rotate(-25deg);
+        
+        .offer{
+            font-size: 18px;
+            color: #00C851;
+        }
+
+        .price{
+            font-size: 13px;
+            color: red;
+            text-decoration: line-through;
+        }
+    }
+
     .imgBx{
         width: 100%;
         height: 100%;
@@ -52,7 +80,7 @@
             transition: all .0s;
 
             .contentBx{
-                padding: 0px 20px;
+                padding: 0px 10px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -69,8 +97,8 @@
                     span{
                         background-color: variables.$transparency;
                         box-shadow: variables.$border;
-                        width: 40px;
-                        height: 40px;;
+                        width: 35px;
+                        height: 35px;;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -109,11 +137,28 @@
         }
 
         .content_container{
-            bottom: 20%;
+            bottom: 24%;
             overflow: visible;
 
             .content_hidder{
                 top: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .card{
+        height: 200px;
+        width: 43%;
+        display: flex;
+        align-items: center;
+
+        .imgBx{
+            width: 80%;
+            h2{
+                width: 100%;
+                font-size: 20px;
             }
         }
     }

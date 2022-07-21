@@ -19,7 +19,7 @@ export default function Cart() {
 
         <style jsx>{`
             div{
-                width: 50%;
+                width: 50%;   
             }
         `}</style>
     </div>

@@ -22,3 +22,13 @@
         }
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .nav{
+        ul{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+}

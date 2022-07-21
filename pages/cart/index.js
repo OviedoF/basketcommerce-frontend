@@ -21,6 +21,13 @@ export default function ShoppingCart() {
           align-items: center;
           justify-content: center; 
         }    
+
+        @media only screen and (max-width: 600px) {
+            main{
+                display: flex;
+                align-items: center;
+            }
+        }   
       `}</style>
     </main>
   )

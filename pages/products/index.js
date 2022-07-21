@@ -49,7 +49,8 @@ function ProductsPage({resProducts}) {
                 setSizesActive={setSizesActive}
             />
 
-            <ProductContainer 
+            <ProductContainer
+                isGeneral={true} 
                 products={resProducts} 
                 color={color}
                 sizesActive={sizesActive}
