@@ -11,6 +11,7 @@ function HomeSection({categorys}) {
         <section className={styles.grid_container}>
             {categorys.map(el => (
                 <HomeDiv 
+                    key={el._id}
                     imageBanner={el.imageUrl} 
                     title={el.name} 
                     redirectTo={el.name === "todos los productos" ? 'products' : `products/${el.name}`} 

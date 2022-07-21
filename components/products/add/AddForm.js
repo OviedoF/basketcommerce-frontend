@@ -78,7 +78,7 @@ export default function AddForm() {
         setError(false);
         setIsLoading(true);
 
-        await axios.post('http://localhost:4000/api/products', data)
+        await axios.post('https://basket-commerce-api.herokuapp.com/api/products', data)
             .then(response =>{ 
                 console.log(response.data);
                 setDone(true);

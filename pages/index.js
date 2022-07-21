@@ -22,7 +22,7 @@ function Main({categorys}) {
 }
 
 export async function getServerSideProps(){
-    const categorys = await axios('http://localhost:4000/api/categorys')
+    const categorys = await axios('https://basket-commerce-api.herokuapp.com/api/categorys')
         .then(response => response.data)
         .catch(err => console.log(err));
    

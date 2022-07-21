@@ -37,7 +37,7 @@ export default function AddCategoryForm() {
         setDone(false);
         setError(false);
 
-        axios.post('http://localhost:4000/api/categorys', form)
+        axios.post('https://basket-commerce-api.herokuapp.com/api/categorys', form)
             .then((res) => {
                 setDone(true);
             })

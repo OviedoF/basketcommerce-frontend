@@ -61,7 +61,7 @@ export default function ProductEdit({product, nameApi}) {
         setError(false);
         setIsLoading(true);
 
-        await axios.put(`http://localhost:4000/api/products/${product._id}`, data)
+        await axios.put(`https://basket-commerce-api.herokuapp.com/api/products/${product._id}`, data)
             .then(response =>{ 
                 console.log(response.data);
                 setDone(true);

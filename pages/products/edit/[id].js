@@ -19,7 +19,7 @@ export default function EditProductPage({product}) {
 }
 
 export async function getServerSideProps(context){
-    const product = await axios(`http://localhost:4000/api/products/${context.params.id}`)
+    const product = await axios(`https://basket-commerce-api.herokuapp.com/pi/products/${context.params.id}`)
         .then(response => response.data)
         .catch(err => console.log(err));
    

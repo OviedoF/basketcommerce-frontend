@@ -11,7 +11,7 @@ export default function AdminDelete({id, setSuccess, setError, setIsLoading, nam
     setError(false);
     setSuccess(false);
 
-    axios.delete(`http://localhost:4000/api/${nameApi}/${id}`)
+    axios.delete(`https://basket-commerce-api.herokuapp.com/api/${nameApi}/${id}`)
       .then(res => {
         setSuccess(true);
         setIsLoading(false);

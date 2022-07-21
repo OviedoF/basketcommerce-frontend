@@ -58,9 +58,7 @@ function ProductsPage({resProducts}) {
 }
 
 export async function getServerSideProps(context){
-    console.log(`http://localhost:4000/api/products/category/${context.params.category}`);
-
-    const resProducts = await axios(`http://localhost:4000/api/products/category/${context.params.category}`)
+    const resProducts = await axios(`https://basket-commerce-api.herokuapp.com/api/products/category/${context.params.category}`)
         .then(response => response.data)
         .catch(err => console.log(err));
    

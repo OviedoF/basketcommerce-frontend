@@ -26,7 +26,7 @@ export default function Messages({comments}) {
 }
 
 export async function getServerSideProps(){
-  const comments = await axios('http://localhost:4000/api/comments')
+  const comments = await axios('https://basket-commerce-api.herokuapp.com/api/comments')
       .then(response => response.data)
       .catch(err => console.log(err));
  

@@ -10,7 +10,6 @@ function ProductContainer({products, color, sizesActive, isGeneral}) {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
-    console.log(products);
     const dispatch = useDispatch();
     const [productsRender, setProductsRender] = useState(products);
 

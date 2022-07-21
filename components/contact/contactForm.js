@@ -40,7 +40,7 @@ function ContactForm() {
         setError(false);
         setSuccess(false);
 
-        await axios.post('http://localhost:4000/api/comments', f)
+        await axios.post('https://basket-commerce-api.herokuapp.com/api/comments', f)
             .then(res => {
                 console.log(res)
                 setSuccess(true);
